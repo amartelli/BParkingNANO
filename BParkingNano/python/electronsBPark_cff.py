@@ -44,12 +44,12 @@ electronsForAnalysis = cms.EDProducer(
   mvaId = cms.InputTag("lowPtGsfElectronLatestID"),
   vertexCollection = cms.InputTag("offlineSlimmedPrimaryVertices"),
   ## cleaning wrt trigger muon [-1 == no cut]
-  drForCleaning_wrtTrgMuon = cms.double(-1.),
-  dzForCleaning_wrtTrgMuon = cms.double(-1.),
+    drForCleaning_wrtTrgMuon = cms.double(0.01),
+  dzForCleaning_wrtTrgMuon = cms.double(1.),
   ## cleaning between pfEle and lowPtGsf
   drForCleaning = cms.double(0.01),
   dzForCleaning = cms.double(0.01),
-  ptMin = cms.double(1.),
+    ptMin = cms.double(0.5),
   etaMax = cms.double(2.5),
     bdtMin = cms.double(0), #this cut can be used to deactivate low pT e if set to >12
   useGsfModeForP4 = cms.bool(True),
